@@ -15,7 +15,6 @@
 #include "my_i2c.h"
 #include "serial.h"
 #include "adxl355.h"
-#include "ES15007.h"
 #include "dog104.h"
 
 /*
@@ -57,10 +56,10 @@ void main(void)
     __delay_ms(50);
     
     ADXL355_Init(RANGE_2G, MEASURE_MODE);
+    
     initDispl(); //init display
     DisplayOnOff(DISPLAY_ON); //Disable cursor
     DisplLines(DOUBLEHEIGHT_OFF);
-    ES15007_Init_Norm(); // This routine do nothing.
     
     putrsserial("ADXL355Z sensor tester\n");
     
