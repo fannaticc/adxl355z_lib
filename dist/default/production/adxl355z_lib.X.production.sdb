@@ -1,0 +1,829 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC IEEE_DBL LFSROK SPACEOPT EMI_WORD IEEE_FLT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F2520 ]
+[d frameptr 4065 ]
+"19 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.c
+[v _ADXL355_Init ADXL355_Init `(v  1 e 1 0 ]
+"42 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.h
+[s S30 axis_value 18 `l 1 x_axis 4 0 `l 1 y_axis 4 4 `l 1 z_axis 4 8 `i 1 temp_reg 2 12 `f 1 temp 4 14 ]
+"26 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.c
+[v _ADXL355_Read_Axis ADXL355_Read_Axis `(S30  1 e 18 0 ]
+"74
+[v _I2C_Write_Byte I2C_Write_Byte `(v  1 e 1 0 ]
+"51 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.h
+[s S40 g_value 12 `f 1 x_axis 4 0 `f 1 y_axis 4 4 `f 1 z_axis 4 8 ]
+"83 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.c
+[v _ADXL355_Convert_G ADXL355_Convert_G `(S40  1 e 12 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"13 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\cos.c
+[v _cos cos `(d  1 e 4 0 ]
+"409 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\doprnt.c
+[v _fround fround `(d  1 s 4 fround ]
+"425
+[v _scale scale `(d  1 s 4 scale ]
+"492
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\evalpoly.c
+[v _eval_poly eval_poly `(d  1 e 4 0 ]
+"60 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\fldivl.c
+[v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"13 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\floor.c
+[v _floor floor `(d  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"254 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\frexp.c
+[v _frexp frexp `(d  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"60 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\ftdivl.c
+[v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"13 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sin.c
+[v _sin sin `(d  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"9 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\tan.c
+[v _tan tan `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"34 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\dog104.c
+[v _initDispl initDispl `(v  1 e 1 0 ]
+"78
+[v _WriteString WriteString `(v  1 e 1 0 ]
+"91
+[v _DisplLines DisplLines `(v  1 e 1 0 ]
+"112
+[v _SetPostion SetPostion `(v  1 e 1 0 ]
+"121
+[v _DisplayOnOff DisplayOnOff `(v  1 e 1 0 ]
+"146
+[v _ClrDisplay ClrDisplay `(v  1 e 1 0 ]
+"191
+[v _WriteIns WriteIns `(v  1 e 1 0 ]
+"201
+[v _WriteData WriteData `(v  1 e 1 0 ]
+"211
+[v _CheckBusy CheckBusy `(uc  1 e 1 0 ]
+"221
+[v _IIC_put IIC_put `(v  1 e 1 0 ]
+"234
+[v _IIC_get IIC_get `(uc  1 s 1 IIC_get ]
+"170 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\ES15007.c
+[v _ES15007_Init_Norm ES15007_Init_Norm `(v  1 e 1 0 ]
+"24 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"11 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\my_delays.c
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+"11 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\my_i2c.c
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+"27
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+"36
+[v _I2C_RepeatedStart I2C_RepeatedStart `(v  1 e 1 0 ]
+"45
+[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
+"52
+[v _I2C_Idle I2C_Idle `(v  1 e 1 0 ]
+"58
+[v _I2C_Close I2C_Close `(v  1 e 1 0 ]
+"63
+[v _I2C_ReadByte I2C_ReadByte `(uc  1 e 1 0 ]
+"98
+[v _I2C_WriteByte I2C_WriteByte `(uc  1 e 1 0 ]
+"11 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\serial.c
+[v _putrsserial putrsserial `(v  1 e 1 0 ]
+"29
+[v _writeserial writeserial `(v  1 e 1 0 ]
+"34
+[v _readserial readserial `(uc  1 e 1 0 ]
+"65
+[v _DataRdyUSART DataRdyUSART `(uc  1 e 1 0 ]
+"1026 C:\Program Files (x86)\Microchip\xc8\v1.40\include\pic18f2520.h
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"1247
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"1468
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S189 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1500
+[s S198 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S207 . 1 `S189 1 . 1 0 `S198 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES207  1 e 1 @3988 ]
+"2241
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+"2450
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+[s S475 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2489
+[s S484 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S493 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S496 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S498 . 1 `S475 1 . 1 0 `S484 1 . 1 0 `S493 1 . 1 0 `S496 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES498  1 e 1 @4012 ]
+"2705
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"2727
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"2873
+[v _CMCON CMCON `VEuc  1 e 1 @4020 ]
+"3208
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"3649
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"3869
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
+[s S234 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"3894
+[s S243 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[u S250 . 1 `S234 1 . 1 0 `S243 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES250  1 e 1 @4037 ]
+"3963
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+[s S399 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"3983
+[s S405 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S410 . 1 `S399 1 . 1 0 `S405 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES410  1 e 1 @4038 ]
+"4032
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+[s S270 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"4108
+[s S273 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S276 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S285 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S290 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 A 1 0 :1:5 
+]
+[s S295 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S300 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S305 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S308 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S311 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S316 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S322 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S327 . 1 `S270 1 . 1 0 `S273 1 . 1 0 `S276 1 . 1 0 `S285 1 . 1 0 `S290 1 . 1 0 `S295 1 . 1 0 `S300 1 . 1 0 `S305 1 . 1 0 `S308 1 . 1 0 `S311 1 . 1 0 `S316 1 . 1 0 `S322 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES327  1 e 1 @4039 ]
+"4252
+[v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
+"4258
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"5024
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"354 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\doprnt.c
+[v _dpowers dpowers `C[10]ul  1 s 40 dpowers ]
+"7 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\powers.c
+[v __powers_ _powers_ `C[13]d  1 e 52 0 ]
+"39
+[v __npowers_ _npowers_ `C[13]d  1 e 52 0 ]
+"16 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\dog104.c
+[v _dh_function_set dh_function_set `uc  1 e 1 0 ]
+"24 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"26
+[v main@aux aux `[20]uc  1 a 20 40 ]
+[s S30 axis_value 18 `l 1 x_axis 4 0 `l 1 y_axis 4 4 `l 1 z_axis 4 8 `i 1 temp_reg 2 12 `f 1 temp 4 14 ]
+"29
+[v main@acc_value acc_value `S30  1 a 18 60 ]
+[s S40 g_value 12 `f 1 x_axis 4 0 `f 1 y_axis 4 4 `f 1 z_axis 4 8 ]
+"31
+[v main@acc_g acc_g `S40  1 a 12 78 ]
+"111
+} 0
+"492 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+"516
+[v sprintf@fval fval `d  1 a 4 116 ]
+[u S1003 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
+"526
+[v sprintf@tmpval tmpval `S1003  1 a 4 108 ]
+"528
+[v sprintf@val val `ul  1 a 4 104 ]
+"508
+[v sprintf@flag flag `us  1 a 2 123 ]
+"504
+[v sprintf@prec prec `i  1 a 2 120 ]
+"501
+[v sprintf@width width `i  1 a 2 114 ]
+"516
+[v sprintf@exp exp `i  1 a 2 112 ]
+"499
+[v sprintf@c c `c  1 a 1 122 ]
+"494
+[v sprintf@ap ap `[1]*.30v  1 a 1 103 ]
+"492
+[v sprintf@sp sp `*.30uc  1 p 1 80 ]
+[v sprintf@f f `*.25Cuc  1 p 2 81 ]
+"1541
+} 0
+"425
+[v _scale scale `(d  1 s 4 scale ]
+{
+[v scale@scl scl `c  1 a 1 wreg ]
+[v scale@scl scl `c  1 a 1 wreg ]
+"428
+[v scale@scl scl `c  1 a 1 47 ]
+"441
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"8
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"35
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 12 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 11 ]
+[v ___awdiv@counter counter `uc  1 a 1 10 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 6 ]
+[v ___awdiv@divisor divisor `i  1 p 2 8 ]
+"42
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 2 ]
+"15
+} 0
+"409 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\doprnt.c
+[v _fround fround `(d  1 s 4 fround ]
+{
+[v fround@prec prec `uc  1 a 1 wreg ]
+[v fround@prec prec `uc  1 a 1 wreg ]
+"413
+[v fround@prec prec `uc  1 a 1 55 ]
+"418
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+{
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 3 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 2 ]
+"4
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbmod@divisor divisor `uc  1 p 1 0 ]
+"9
+[v ___lbmod@dividend dividend `uc  1 a 1 1 ]
+"18
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+{
+[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbdiv@quotient quotient `uc  1 a 1 7 ]
+"7
+[v ___lbdiv@counter counter `uc  1 a 1 6 ]
+"4
+[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbdiv@divisor divisor `uc  1 p 1 4 ]
+"9
+[v ___lbdiv@dividend dividend `uc  1 a 1 5 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1318 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1323 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1326 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1318 1 fAsBytes 4 0 `S1323 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1326  1 a 4 33 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 28 ]
+[s S1394 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1397 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1394 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1397  1 a 2 37 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 27 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
+"205
+} 0
+"60 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\ftdivl.c
+[v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
+{
+"63
+[v __tdiv_to_l_@quot quot `ul  1 a 4 11 ]
+"62
+[v __tdiv_to_l_@exp1 exp1 `uc  1 a 1 16 ]
+[v __tdiv_to_l_@cntr cntr `uc  1 a 1 15 ]
+"60
+[v __tdiv_to_l_@f1 f1 `f  1 p 4 0 ]
+[v __tdiv_to_l_@f2 f2 `f  1 p 4 4 ]
+"101
+} 0
+"60 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\fldivl.c
+[v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
+{
+"63
+[v __div_to_l_@quot quot `ul  1 a 4 8 ]
+"62
+[v __div_to_l_@exp1 exp1 `uc  1 a 1 13 ]
+[v __div_to_l_@cntr cntr `uc  1 a 1 12 ]
+"60
+[v __div_to_l_@f1 f1 `d  1 p 4 0 ]
+[v __div_to_l_@f2 f2 `d  1 p 4 4 ]
+"101
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"11
+[v ___llmod@counter counter `uc  1 a 1 8 ]
+"8
+[v ___llmod@dividend dividend `ul  1 p 4 0 ]
+[v ___llmod@divisor divisor `ul  1 p 4 4 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"11
+[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
+"12
+[v ___lldiv@counter counter `uc  1 a 1 12 ]
+"8
+[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
+"31
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 57 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 56 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 48 ]
+"70
+} 0
+"245 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 72 ]
+[v ___flsub@a a `d  1 p 4 76 ]
+"250
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
+} 0
+"11 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\serial.c
+[v _putrsserial putrsserial `(v  1 e 1 0 ]
+{
+[v putrsserial@data data `*.35Cuc  1 p 2 1 ]
+"18
+} 0
+"29
+[v _writeserial writeserial `(v  1 e 1 0 ]
+{
+[v writeserial@data data `uc  1 a 1 wreg ]
+[v writeserial@data data `uc  1 a 1 wreg ]
+"31
+[v writeserial@data data `uc  1 a 1 0 ]
+"32
+} 0
+"34 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\dog104.c
+[v _initDispl initDispl `(v  1 e 1 0 ]
+{
+"63
+} 0
+"121
+[v _DisplayOnOff DisplayOnOff `(v  1 e 1 0 ]
+{
+[v DisplayOnOff@data data `c  1 a 1 wreg ]
+[v DisplayOnOff@data data `c  1 a 1 wreg ]
+"123
+[v DisplayOnOff@data data `c  1 a 1 5 ]
+"124
+} 0
+"146
+[v _ClrDisplay ClrDisplay `(v  1 e 1 0 ]
+{
+"150
+} 0
+"112
+[v _SetPostion SetPostion `(v  1 e 1 0 ]
+{
+[v SetPostion@pos pos `c  1 a 1 wreg ]
+[v SetPostion@pos pos `c  1 a 1 wreg ]
+"114
+[v SetPostion@pos pos `c  1 a 1 5 ]
+"115
+} 0
+"78
+[v _WriteString WriteString `(v  1 e 1 0 ]
+{
+[v WriteString@stringi stringi `*.30c  1 p 1 5 ]
+"85
+} 0
+"201
+[v _WriteData WriteData `(v  1 e 1 0 ]
+{
+[v WriteData@data data `c  1 a 1 wreg ]
+[v WriteData@data data `c  1 a 1 wreg ]
+[v WriteData@data data `c  1 a 1 4 ]
+"205
+} 0
+"11 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\my_i2c.c
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+{
+[v I2C_Init@clock_output clock_output `uc  1 a 1 wreg ]
+[v I2C_Init@clock_output clock_output `uc  1 a 1 wreg ]
+"13
+[v I2C_Init@clock_output clock_output `uc  1 a 1 0 ]
+"25
+} 0
+"58
+[v _I2C_Close I2C_Close `(v  1 e 1 0 ]
+{
+"61
+} 0
+"170 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\ES15007.c
+[v _ES15007_Init_Norm ES15007_Init_Norm `(v  1 e 1 0 ]
+{
+"173
+} 0
+"91 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\dog104.c
+[v _DisplLines DisplLines `(v  1 e 1 0 ]
+{
+[v DisplLines@lines lines `uc  1 a 1 wreg ]
+[v DisplLines@lines lines `uc  1 a 1 wreg ]
+"93
+[v DisplLines@lines lines `uc  1 a 1 5 ]
+"106
+} 0
+"191
+[v _WriteIns WriteIns `(v  1 e 1 0 ]
+{
+[v WriteIns@ins ins `c  1 a 1 wreg ]
+[v WriteIns@ins ins `c  1 a 1 wreg ]
+[v WriteIns@ins ins `c  1 a 1 4 ]
+"195
+} 0
+"221
+[v _IIC_put IIC_put `(v  1 e 1 0 ]
+{
+[v IIC_put@cb cb `uc  1 a 1 wreg ]
+[v IIC_put@cb cb `uc  1 a 1 wreg ]
+[v IIC_put@db db `uc  1 p 1 2 ]
+"223
+[v IIC_put@cb cb `uc  1 a 1 3 ]
+"228
+} 0
+"211
+[v _CheckBusy CheckBusy `(uc  1 e 1 0 ]
+{
+"214
+} 0
+"234
+[v _IIC_get IIC_get `(uc  1 s 1 IIC_get ]
+{
+"236
+[v IIC_get@ret ret `uc  1 a 1 3 ]
+"247
+} 0
+"11 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\my_delays.c
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+{
+"13
+[v Delay_ms@i i `ui  1 a 2 3 ]
+"11
+[v Delay_ms@count count `ui  1 p 2 0 ]
+"19
+} 0
+"42 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.h
+[s S30 axis_value 18 `l 1 x_axis 4 0 `l 1 y_axis 4 4 `l 1 z_axis 4 8 `i 1 temp_reg 2 12 `f 1 temp 4 14 ]
+"26 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.c
+[v _ADXL355_Read_Axis ADXL355_Read_Axis `(S30  1 e 18 0 ]
+{
+[v ADXL355_Read_Axis@address address `uc  1 a 1 wreg ]
+"28
+[v ADXL355_Read_Axis@axis axis `S30  1 a 18 21 ]
+"29
+[v ADXL355_Read_Axis@buffer buffer `[15]uc  1 a 15 0 ]
+"30
+[v ADXL355_Read_Axis@i i `uc  1 a 1 20 ]
+"26
+[v ADXL355_Read_Axis@address address `uc  1 a 1 wreg ]
+[v ADXL355_Read_Axis@address address `uc  1 a 1 19 ]
+"58
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 71 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 70 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 69 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 68 ]
+"10
+[v ___fladd@b b `d  1 p 4 56 ]
+[v ___fladd@a a `d  1 p 4 60 ]
+"237
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"11
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
+"12
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
+"8
+[v ___aldiv@dividend dividend `l  1 p 4 0 ]
+[v ___aldiv@divisor divisor `l  1 p 4 4 ]
+"42
+} 0
+"36 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\my_i2c.c
+[v _I2C_RepeatedStart I2C_RepeatedStart `(v  1 e 1 0 ]
+{
+"43
+} 0
+"63
+[v _I2C_ReadByte I2C_ReadByte `(uc  1 e 1 0 ]
+{
+[v I2C_ReadByte@acknowledge acknowledge `uc  1 a 1 wreg ]
+"65
+[v I2C_ReadByte@buffer_I2C buffer_I2C `uc  1 a 1 2 ]
+"63
+[v I2C_ReadByte@acknowledge acknowledge `uc  1 a 1 wreg ]
+[v I2C_ReadByte@acknowledge acknowledge `uc  1 a 1 1 ]
+"96
+} 0
+"19 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.c
+[v _ADXL355_Init ADXL355_Init `(v  1 e 1 0 ]
+{
+[v ADXL355_Init@_range _range `uc  1 a 1 wreg ]
+[v ADXL355_Init@_range _range `uc  1 a 1 wreg ]
+[v ADXL355_Init@_power_mode _power_mode `uc  1 p 1 5 ]
+"21
+[v ADXL355_Init@_range _range `uc  1 a 1 6 ]
+"23
+} 0
+"74
+[v _I2C_Write_Byte I2C_Write_Byte `(v  1 e 1 0 ]
+{
+[v I2C_Write_Byte@i2c_address i2c_address `uc  1 a 1 wreg ]
+[v I2C_Write_Byte@i2c_address i2c_address `uc  1 a 1 wreg ]
+[v I2C_Write_Byte@mem_address mem_address `uc  1 p 1 2 ]
+[v I2C_Write_Byte@content content `uc  1 p 1 3 ]
+"76
+[v I2C_Write_Byte@i2c_address i2c_address `uc  1 a 1 4 ]
+"81
+} 0
+"98 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\my_i2c.c
+[v _I2C_WriteByte I2C_WriteByte `(uc  1 e 1 0 ]
+{
+[v I2C_WriteByte@data_out data_out `uc  1 a 1 wreg ]
+[v I2C_WriteByte@data_out data_out `uc  1 a 1 wreg ]
+"100
+[v I2C_WriteByte@data_out data_out `uc  1 a 1 1 ]
+"128
+} 0
+"45
+[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
+{
+"50
+} 0
+"27
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+{
+"34
+} 0
+"52
+[v _I2C_Idle I2C_Idle `(v  1 e 1 0 ]
+{
+"56
+} 0
+"51 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.h
+[s S40 g_value 12 `f 1 x_axis 4 0 `f 1 y_axis 4 4 `f 1 z_axis 4 8 ]
+"83 C:\Users\Raphael\Google Drive\LSFO\projetos\node_485\adxl355z_lib.X\adxl355.c
+[v _ADXL355_Convert_G ADXL355_Convert_G `(S40  1 e 12 0 ]
+{
+"85
+[v ADXL355_Convert_G@g g `S40  1 a 12 115 ]
+[s S30 axis_value 18 `l 1 x_axis 4 0 `l 1 y_axis 4 4 `l 1 z_axis 4 8 `i 1 temp_reg 2 12 `f 1 temp 4 14 ]
+"83
+[v ADXL355_Convert_G@raw_value raw_value `S30  1 p 18 97 ]
+"92
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"11 C:\Program Files (x86)\Microchip\xc8\v1.40\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 91 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 85 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 89 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 96 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 95 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 84 ]
+"11
+[v ___fldiv@b b `d  1 p 4 72 ]
+[v ___fldiv@a a `d  1 p 4 76 ]
+"184
+} 0

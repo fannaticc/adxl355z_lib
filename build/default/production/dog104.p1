@@ -1,0 +1,598 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"86 dog104.h
+[v _WriteIns `(v ~T0 @X0 0 ef1`c ]
+"77
+[v _ClrDisplay `(v ~T0 @X0 0 ef ]
+"75
+[v _DisplayOnOff `(v ~T0 @X0 0 ef1`c ]
+"87
+[v _WriteData `(v ~T0 @X0 0 ef1`c ]
+"89
+[v _CheckBusy `(uc ~T0 @X0 0 ef ]
+"90
+[v _IIC_put `(v ~T0 @X0 0 ef2`uc`uc ]
+"91
+[v _IIC_get `(uc ~T0 @X0 0 sf ]
+"18 my_i2c.h
+[v _I2C_Start `(v ~T0 @X0 0 ef ]
+"15
+[v _I2C_WriteByte `(uc ~T0 @X0 0 ef1`uc ]
+"20
+[v _I2C_Stop `(v ~T0 @X0 0 ef ]
+"19
+[v _I2C_RepeatedStart `(v ~T0 @X0 0 ef ]
+"14
+[v _I2C_ReadByte `(uc ~T0 @X0 0 ef1`uc ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;dog104.h: 71: void initDispl(void);
+[; ;dog104.h: 72: void WriteChar(int8_t character);
+[; ;dog104.h: 73: void WriteString(int8_t *stringi);
+[; ;dog104.h: 74: void SetPostion(int8_t pos);
+[; ;dog104.h: 75: void DisplayOnOff(int8_t data);
+[; ;dog104.h: 76: void DefineCharacter(uint8_t postion, uint8_t *data);
+[; ;dog104.h: 77: void ClrDisplay(void);
+[; ;dog104.h: 78: void SetContrast(uint8_t contr);
+[; ;dog104.h: 79: void SetView(uint8_t view);
+[; ;dog104.h: 80: void SetROM(uint8_t value);
+[; ;dog104.h: 81: void DisplLines(uint8_t lines);
+[; ;dog104.h: 86: void WriteIns(int8_t ins);
+[; ;dog104.h: 87: void WriteData(int8_t data);
+[; ;dog104.h: 89: uint8_t CheckBusy(void);
+[; ;dog104.h: 90: void IIC_put(uint8_t cb, uint8_t db);
+[; ;dog104.h: 91: static uint8_t IIC_get(void);
+[; ;my_i2c.h: 14: unsigned char I2C_ReadByte(unsigned char acknowledge);
+[; ;my_i2c.h: 15: unsigned char I2C_WriteByte(unsigned char data_out);
+[; ;my_i2c.h: 17: void I2C_Init(unsigned char clock_output);
+[; ;my_i2c.h: 18: void I2C_Start(void);
+[; ;my_i2c.h: 19: void I2C_RepeatedStart(void);
+[; ;my_i2c.h: 20: void I2C_Stop(void);
+[; ;my_i2c.h: 21: void I2C_Idle(void);
+[; ;my_i2c.h: 22: void I2C_Close(void);
+"16 dog104.c
+[v _dh_function_set `uc ~T0 @X0 1 e ]
+[i _dh_function_set
+-> -> 56 `i `uc
+]
+[; ;dog104.c: 16: unsigned char dh_function_set = 0x38;
+"21
+[v _Wait `(v ~T0 @X0 1 ef1`uc ]
+"22
+{
+[; ;dog104.c: 21: void Wait (uint8_t waitstates)
+[; ;dog104.c: 22: {
+[e :U _Wait ]
+"21
+[v _waitstates `uc ~T0 @X0 1 r1 ]
+"22
+[f ]
+"23
+[v _i `uc ~T0 @X0 1 a ]
+[; ;dog104.c: 23: uint8_t i = 0;
+[e = _i -> -> 0 `i `uc ]
+[; ;dog104.c: 24: for (i = 0; i < waitstates; i++)
+"24
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 5  ]
+"25
+[e :U 2 ]
+[; ;dog104.c: 25: {
+{
+[; ;dog104.c: 26: asm("NOP");
+"26
+[; <" NOP ;# ">
+"27
+}
+"24
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 5 ]
+[e $ < -> _i `i -> _waitstates `i 2  ]
+[e :U 3 ]
+"27
+}
+[; ;dog104.c: 27: }
+[; ;dog104.c: 28: }
+"28
+[e :UE 1 ]
+}
+"34
+[v _initDispl `(v ~T0 @X0 1 ef ]
+"35
+{
+[; ;dog104.c: 34: void initDispl(void)
+[; ;dog104.c: 35: {
+[e :U _initDispl ]
+[f ]
+"36
+[v _i `uc ~T0 @X0 1 a ]
+[; ;dog104.c: 36: uint8_t i;
+[; ;dog104.c: 45: WriteIns(0x3A);
+"45
+[e ( _WriteIns (1 -> -> 58 `i `c ]
+[; ;dog104.c: 46: WriteIns(0x09);
+"46
+[e ( _WriteIns (1 -> -> 9 `i `c ]
+[; ;dog104.c: 48: WriteIns(0x06);
+"48
+[e ( _WriteIns (1 -> -> 6 `i `c ]
+[; ;dog104.c: 53: WriteIns(0x1E);
+"53
+[e ( _WriteIns (1 -> -> 30 `i `c ]
+[; ;dog104.c: 54: WriteIns(0x39);
+"54
+[e ( _WriteIns (1 -> -> 57 `i `c ]
+[; ;dog104.c: 55: WriteIns(0x1B);
+"55
+[e ( _WriteIns (1 -> -> 27 `i `c ]
+[; ;dog104.c: 56: WriteIns(0x6E);
+"56
+[e ( _WriteIns (1 -> -> 110 `i `c ]
+[; ;dog104.c: 57: WriteIns(0x56);
+"57
+[e ( _WriteIns (1 -> -> 86 `i `c ]
+[; ;dog104.c: 58: WriteIns(0x7A);
+"58
+[e ( _WriteIns (1 -> -> 122 `i `c ]
+[; ;dog104.c: 59: WriteIns(dh_function_set);
+"59
+[e ( _WriteIns (1 -> _dh_function_set `c ]
+[; ;dog104.c: 61: ClrDisplay();
+"61
+[e ( _ClrDisplay ..  ]
+[; ;dog104.c: 62: DisplayOnOff(0x04 | 0x02 | 0x01);
+"62
+[e ( _DisplayOnOff (1 -> | | -> 4 `i -> 2 `i -> 1 `i `c ]
+[; ;dog104.c: 63: }
+"63
+[e :UE 6 ]
+}
+"69
+[v _WriteChar `(v ~T0 @X0 1 ef1`c ]
+"70
+{
+[; ;dog104.c: 69: void WriteChar(int8_t character)
+[; ;dog104.c: 70: {
+[e :U _WriteChar ]
+"69
+[v _character `c ~T0 @X0 1 r1 ]
+"70
+[f ]
+[; ;dog104.c: 71: WriteData(character);
+"71
+[e ( _WriteData (1 _character ]
+[; ;dog104.c: 72: }
+"72
+[e :UE 7 ]
+}
+"78
+[v _WriteString `(v ~T0 @X0 1 ef1`*c ]
+"79
+{
+[; ;dog104.c: 78: void WriteString(int8_t *stringi)
+[; ;dog104.c: 79: {
+[e :U _WriteString ]
+"78
+[v _stringi `*c ~T0 @X0 1 r1 ]
+"79
+[f ]
+[; ;dog104.c: 80: do
+"80
+[e :U 11 ]
+[; ;dog104.c: 81: {
+"81
+{
+[; ;dog104.c: 82: WriteData(*stringi++);
+"82
+[e ( _WriteData (1 *U ++ _stringi * -> -> 1 `i `x -> -> # *U _stringi `i `x ]
+"83
+}
+[; ;dog104.c: 83: }
+[; ;dog104.c: 84: while(*stringi);
+"84
+[e $ != -> *U _stringi `i -> -> -> 0 `i `c `i 11  ]
+[e :U 10 ]
+[; ;dog104.c: 85: }
+"85
+[e :UE 8 ]
+}
+"91
+[v _DisplLines `(v ~T0 @X0 1 ef1`uc ]
+"92
+{
+[; ;dog104.c: 91: void DisplLines(uint8_t lines)
+[; ;dog104.c: 92: {
+[e :U _DisplLines ]
+"91
+[v _lines `uc ~T0 @X0 1 r1 ]
+"92
+[f ]
+[; ;dog104.c: 93: if(lines == 0x38)
+"93
+[e $ ! == -> _lines `i -> 56 `i 13  ]
+[; ;dog104.c: 94: {
+"94
+{
+[; ;dog104.c: 95: WriteIns(lines);
+"95
+[e ( _WriteIns (1 -> _lines `c ]
+[; ;dog104.c: 96: dh_function_set = 0x38;
+"96
+[e = _dh_function_set -> -> 56 `i `uc ]
+"97
+}
+[; ;dog104.c: 97: }
+[e $U 14  ]
+"98
+[e :U 13 ]
+[; ;dog104.c: 98: else
+[; ;dog104.c: 99: {
+"99
+{
+[; ;dog104.c: 100: WriteIns(0x3C);
+"100
+[e ( _WriteIns (1 -> -> 60 `i `c ]
+[; ;dog104.c: 101: WriteIns(0x3A);
+"101
+[e ( _WriteIns (1 -> -> 58 `i `c ]
+[; ;dog104.c: 102: WriteIns(lines);
+"102
+[e ( _WriteIns (1 -> _lines `c ]
+[; ;dog104.c: 103: WriteIns(0x3C);
+"103
+[e ( _WriteIns (1 -> -> 60 `i `c ]
+[; ;dog104.c: 104: dh_function_set = 0x3C;
+"104
+[e = _dh_function_set -> -> 60 `i `uc ]
+"105
+}
+[e :U 14 ]
+[; ;dog104.c: 105: }
+[; ;dog104.c: 106: }
+"106
+[e :UE 12 ]
+}
+"112
+[v _SetPostion `(v ~T0 @X0 1 ef1`c ]
+"113
+{
+[; ;dog104.c: 112: void SetPostion(int8_t pos)
+[; ;dog104.c: 113: {
+[e :U _SetPostion ]
+"112
+[v _pos `c ~T0 @X0 1 r1 ]
+"113
+[f ]
+[; ;dog104.c: 114: WriteIns(0x80 + pos);
+"114
+[e ( _WriteIns (1 -> + -> 128 `i -> _pos `i `c ]
+[; ;dog104.c: 115: }
+"115
+[e :UE 15 ]
+}
+"121
+[v _DisplayOnOff `(v ~T0 @X0 1 ef1`c ]
+"122
+{
+[; ;dog104.c: 121: void DisplayOnOff(int8_t data)
+[; ;dog104.c: 122: {
+[e :U _DisplayOnOff ]
+"121
+[v _data `c ~T0 @X0 1 r1 ]
+"122
+[f ]
+[; ;dog104.c: 123: WriteIns(0x08 + data);
+"123
+[e ( _WriteIns (1 -> + -> 8 `i -> _data `i `c ]
+[; ;dog104.c: 124: }
+"124
+[e :UE 16 ]
+}
+"130
+[v _DefineCharacter `(v ~T0 @X0 1 ef2`uc`*uc ]
+"131
+{
+[; ;dog104.c: 130: void DefineCharacter(uint8_t postion, uint8_t *data)
+[; ;dog104.c: 131: {
+[e :U _DefineCharacter ]
+"130
+[v _postion `uc ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+"131
+[f ]
+"132
+[v _i `uc ~T0 @X0 1 a ]
+[; ;dog104.c: 132: uint8_t i = 0;
+[e = _i -> -> 0 `i `uc ]
+[; ;dog104.c: 133: WriteIns(0x40 + 8 * postion);
+"133
+[e ( _WriteIns (1 -> + -> 64 `i * -> 8 `i -> _postion `i `c ]
+[; ;dog104.c: 135: for (i = 0; i < 8; i++)
+"135
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 18  ]
+[e $U 19  ]
+"136
+[e :U 18 ]
+[; ;dog104.c: 136: {
+{
+[; ;dog104.c: 137: WriteData(data[i]);
+"137
+[e ( _WriteData (1 -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `c ]
+"138
+}
+"135
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 18  ]
+[e :U 19 ]
+"138
+}
+[; ;dog104.c: 138: }
+[; ;dog104.c: 139: SetPostion(0);
+"139
+[e ( _SetPostion (1 -> -> 0 `i `c ]
+[; ;dog104.c: 140: }
+"140
+[e :UE 17 ]
+}
+"146
+[v _ClrDisplay `(v ~T0 @X0 1 ef ]
+"147
+{
+[; ;dog104.c: 146: void ClrDisplay(void)
+[; ;dog104.c: 147: {
+[e :U _ClrDisplay ]
+[f ]
+[; ;dog104.c: 148: WriteIns(0x01);
+"148
+[e ( _WriteIns (1 -> -> 1 `i `c ]
+[; ;dog104.c: 149: SetPostion(0);
+"149
+[e ( _SetPostion (1 -> -> 0 `i `c ]
+[; ;dog104.c: 150: }
+"150
+[e :UE 21 ]
+}
+"156
+[v _SetContrast `(v ~T0 @X0 1 ef1`uc ]
+"157
+{
+[; ;dog104.c: 156: void SetContrast(uint8_t contr)
+[; ;dog104.c: 157: {
+[e :U _SetContrast ]
+"156
+[v _contr `uc ~T0 @X0 1 r1 ]
+"157
+[f ]
+[; ;dog104.c: 158: WriteIns(0x39);
+"158
+[e ( _WriteIns (1 -> -> 57 `i `c ]
+[; ;dog104.c: 159: WriteIns(0x54 | (contr >> 4));
+"159
+[e ( _WriteIns (1 -> | -> 84 `i >> -> _contr `i -> 4 `i `c ]
+[; ;dog104.c: 160: WriteIns(0x70 | (contr & 0x0F));
+"160
+[e ( _WriteIns (1 -> | -> 112 `i & -> _contr `i -> 15 `i `c ]
+[; ;dog104.c: 161: WriteIns(dh_function_set);
+"161
+[e ( _WriteIns (1 -> _dh_function_set `c ]
+[; ;dog104.c: 162: }
+"162
+[e :UE 22 ]
+}
+"168
+[v _SetView `(v ~T0 @X0 1 ef1`uc ]
+"169
+{
+[; ;dog104.c: 168: void SetView(uint8_t view)
+[; ;dog104.c: 169: {
+[e :U _SetView ]
+"168
+[v _view `uc ~T0 @X0 1 r1 ]
+"169
+[f ]
+[; ;dog104.c: 170: WriteIns(0x3A);
+"170
+[e ( _WriteIns (1 -> -> 58 `i `c ]
+[; ;dog104.c: 171: WriteIns(view);
+"171
+[e ( _WriteIns (1 -> _view `c ]
+[; ;dog104.c: 172: WriteIns(dh_function_set);
+"172
+[e ( _WriteIns (1 -> _dh_function_set `c ]
+[; ;dog104.c: 173: }
+"173
+[e :UE 23 ]
+}
+"179
+[v _SetROM `(v ~T0 @X0 1 ef1`uc ]
+"180
+{
+[; ;dog104.c: 179: void SetROM(uint8_t value)
+[; ;dog104.c: 180: {
+[e :U _SetROM ]
+"179
+[v _value `uc ~T0 @X0 1 r1 ]
+"180
+[f ]
+[; ;dog104.c: 181: WriteIns(0x2A);
+"181
+[e ( _WriteIns (1 -> -> 42 `i `c ]
+[; ;dog104.c: 182: WriteIns(0x72);
+"182
+[e ( _WriteIns (1 -> -> 114 `i `c ]
+[; ;dog104.c: 183: WriteData(value);
+"183
+[e ( _WriteData (1 -> _value `c ]
+[; ;dog104.c: 184: WriteIns(0x28);
+"184
+[e ( _WriteIns (1 -> -> 40 `i `c ]
+[; ;dog104.c: 185: }
+"185
+[e :UE 24 ]
+}
+"191
+[v _WriteIns `(v ~T0 @X0 1 ef1`c ]
+"192
+{
+[; ;dog104.c: 191: void WriteIns(int8_t ins)
+[; ;dog104.c: 192: {
+[e :U _WriteIns ]
+"191
+[v _ins `c ~T0 @X0 1 r1 ]
+"192
+[f ]
+[; ;dog104.c: 193: while(CheckBusy() == 1);
+"193
+[e $U 26  ]
+[e :U 27 ]
+[e :U 26 ]
+[e $ == -> ( _CheckBusy ..  `i -> 1 `i 27  ]
+[e :U 28 ]
+[; ;dog104.c: 194: IIC_put(0x80, ins);
+"194
+[e ( _IIC_put (2 , -> -> 128 `i `uc -> _ins `uc ]
+[; ;dog104.c: 195: }
+"195
+[e :UE 25 ]
+}
+"201
+[v _WriteData `(v ~T0 @X0 1 ef1`c ]
+"202
+{
+[; ;dog104.c: 201: void WriteData(int8_t data)
+[; ;dog104.c: 202: {
+[e :U _WriteData ]
+"201
+[v _data `c ~T0 @X0 1 r1 ]
+"202
+[f ]
+[; ;dog104.c: 203: while(CheckBusy() == 1);
+"203
+[e $U 30  ]
+[e :U 31 ]
+[e :U 30 ]
+[e $ == -> ( _CheckBusy ..  `i -> 1 `i 31  ]
+[e :U 32 ]
+[; ;dog104.c: 204: IIC_put(0x40, data);
+"204
+[e ( _IIC_put (2 , -> -> 64 `i `uc -> _data `uc ]
+[; ;dog104.c: 205: }
+"205
+[e :UE 29 ]
+}
+"211
+[v _CheckBusy `(uc ~T0 @X0 1 ef ]
+"212
+{
+[; ;dog104.c: 211: uint8_t CheckBusy(void)
+[; ;dog104.c: 212: {
+[e :U _CheckBusy ]
+[f ]
+[; ;dog104.c: 213: return (IIC_get() & 0x80);
+"213
+[e ) -> & -> ( _IIC_get ..  `i -> 128 `i `uc ]
+[e $UE 33  ]
+[; ;dog104.c: 214: }
+"214
+[e :UE 33 ]
+}
+"221
+[v _IIC_put `(v ~T0 @X0 1 ef2`uc`uc ]
+"222
+{
+[; ;dog104.c: 221: void IIC_put(uint8_t cb, uint8_t db)
+[; ;dog104.c: 222: {
+[e :U _IIC_put ]
+"221
+[v _cb `uc ~T0 @X0 1 r1 ]
+[v _db `uc ~T0 @X0 1 r2 ]
+"222
+[f ]
+[; ;dog104.c: 223: I2C_Start();
+"223
+[e ( _I2C_Start ..  ]
+[; ;dog104.c: 224: I2C_WriteByte(0x78);
+"224
+[e ( _I2C_WriteByte (1 -> -> 120 `i `uc ]
+[; ;dog104.c: 225: I2C_WriteByte(cb);
+"225
+[e ( _I2C_WriteByte (1 _cb ]
+[; ;dog104.c: 226: I2C_WriteByte(db);
+"226
+[e ( _I2C_WriteByte (1 _db ]
+[; ;dog104.c: 227: I2C_Stop();
+"227
+[e ( _I2C_Stop ..  ]
+[; ;dog104.c: 228: }
+"228
+[e :UE 34 ]
+}
+"234
+[v _IIC_get `(uc ~T0 @X0 1 sf ]
+"235
+{
+[; ;dog104.c: 234: static uint8_t IIC_get(void)
+[; ;dog104.c: 235: {
+[e :U _IIC_get ]
+[f ]
+"236
+[v _ret `uc ~T0 @X0 1 a ]
+[; ;dog104.c: 236: uint8_t ret;
+[; ;dog104.c: 238: I2C_Start();
+"238
+[e ( _I2C_Start ..  ]
+[; ;dog104.c: 239: I2C_WriteByte(0x78);
+"239
+[e ( _I2C_WriteByte (1 -> -> 120 `i `uc ]
+[; ;dog104.c: 240: I2C_WriteByte(0x80);
+"240
+[e ( _I2C_WriteByte (1 -> -> 128 `i `uc ]
+[; ;dog104.c: 241: I2C_RepeatedStart();
+"241
+[e ( _I2C_RepeatedStart ..  ]
+[; ;dog104.c: 242: I2C_WriteByte(0x78 + 1);
+"242
+[e ( _I2C_WriteByte (1 -> + -> 120 `i -> 1 `i `uc ]
+[; ;dog104.c: 243: ret = I2C_ReadByte(0);
+"243
+[e = _ret ( _I2C_ReadByte (1 -> -> 0 `i `uc ]
+[; ;dog104.c: 244: I2C_Stop();
+"244
+[e ( _I2C_Stop ..  ]
+[; ;dog104.c: 246: return ret;
+"246
+[e ) _ret ]
+[e $UE 35  ]
+[; ;dog104.c: 247: }
+"247
+[e :UE 35 ]
+}
